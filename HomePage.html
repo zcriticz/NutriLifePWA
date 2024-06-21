@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="url-do-servidor">
+    <title>NutriLife</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="space-bottom">
+    <header>
+        <div class="search-container">
+            <img src="assets/images/avatar (2).png" alt="">
+            <div class="user-greeting">Olá, <br> <span id="username">Nome do Usuário</span></div>
+        </div>
+        <div class="notifications">
+            <i class='bx bx-bell'></i> <!-- Ícone de notificações -->
+        </div>
+    </header>
+
+    <div class="calories-graph">
+        <div class="calories-info">
+            <div class="consumed">Consumido: <span id="consumed-calories">0</span> Kcal</div>
+            <div class="burned">Queimado: <span id="burned-calories">0</span> Kcal</div>
+            <div class="remaining">Restante: <span id="remaining-calories">0</span> Kcal</div>
+        </div>
+        <div class="graph">
+            <!-- Aqui viria o gráfico de nível de calorias -->
+        </div>
+    </div>
+
+    <div class="registro-day">
+        <i class='bx bxs-chevron-left' style="color: #000; font-size: 28px; "></i>
+        <h4>Hoje</h4>
+        <i class='bx bxs-chevron-right' style="color: #000; font-size: 28px; "></i>
+    </div>
+
+    <div class="meal-registration" style="padding-bottom: 100px">
+        <a href="registrar-refeição-café-manhã.html" class="meal-link">
+            <div class="meal-section1">
+                <img src="assets/images/prato-café-da-manha.png" alt="Café da Manhã">
+                <div class="meal-info">
+                    <div class="meal-name">Café da Manhã</div>
+                    <div class="meal-goal">Meta: <span id="breakfast-goal">0</span> / <span
+                            id="breakfast-total">0</span> Kcal</div>
+        </a>
+    </div>
+    <div class="meal-action"><i class='bx bx-plus'></i></div>
+    </div>
+
+    <div class="meal-section1">
+        <a href="registrar-refeições-almoço.html" class="meal-link">
+            <img src="assets/images/prato-almoço.png" alt="Almoço">
+            <div class="meal-info">
+                <div class="meal-name">Almoço</div>
+                <div class="meal-goal">Meta: <span id="breakfast-goal">0</span> / <span id="breakfast-total">0</span>
+                    Kcal</div>
+        </a>
+    </div>
+    <div class="meal-action"><i class='bx bx-plus'></i></div>
+    </div>
+    <div class="meal-section1">
+        <a href="registrar-refeições-lanche.html" class="meal-link">
+            <img src="assets/images/lanche.png" alt="Lanche">
+            <div class="meal-info">
+                <div class="meal-name">Lanche</div>
+                <div class="meal-goal">Meta: <span id="breakfast-goal">0</span> / <span id="breakfast-total">0</span>
+                    Kcal</div>
+        </a>
+    </div>
+    <div class="meal-action"><i class='bx bx-plus'></i></div>
+    </div>
+    <div class="meal-section1">
+        <a href="registrar-refeições-janta.html" class="meal-link">
+            <img src="assets/images/prato-janta.png" alt="Janta">
+            <div class="meal-info">
+                <div class="meal-name">Janta</div>
+                <div class="meal-goal">Meta: <span id="breakfast-goal">0</span> / <span id="breakfast-total">0</span>
+                    Kcal</div>
+        </a>
+    </div>
+    <div class="meal-action"><i class='bx bx-plus'></i></div>
+    </div>
+    </div>
+    <!-- Rodapé -->
+    <footer class="footer" style="margin: 0px;">
+        <ul class="footer-menu">
+            <li><a href="home.html" id="homeLink"><i class='bx bx-home'></i></a></li>
+            <li><a href="area-receita.html"><i class='bx bx-dish'></i></a></li> <!-- Ícone de chef de cozinha -->
+            <li><a href="maps.html"><i class='bx bx-map'
+                        style="color: #fff; background-color: #00F180; border-radius: 50%; padding: 10px;"></i></a></li>
+            <!-- Ícone de localização -->
+            <li><a href="#"><i class='bx bx-chart'></i></a></li> <!-- Ícone de gráfico -->
+            <li><a href="#" id="userLink"><i class='bx bx-user'></i></a></li>
+        </ul>
+    </footer>
+    <!-- Link JS-->
+    <script src="script/script.js"></script>
+    <script>
+        // Função para alternar entre os ícones e cores de fundo
+        function alternarIconeEBackground(event) {
+            const mealAction = event.currentTarget;
+            const icone = mealAction.querySelector("i");
+
+            // Alternar entre os ícones bx-plus e bx-check
+            if (icone.classList.contains("bx-plus")) {
+                icone.classList.remove("bx-plus");
+                icone.classList.add("bx-check");
+                // Mudar o fundo para verde
+                mealAction.style.backgroundColor = "#00F180";
+                // Aplicar borda e padding
+                mealAction.style.borderRadius = "50%";
+                mealAction.style.padding = "";
+                // Armazenar no localStorage
+                localStorage.setItem('mealChecked', 'true');
+            } else {
+                icone.classList.remove("bx-check");
+                icone.classList.add("bx-plus");
+                // Mudar o fundo de volta para cinza
+                mealAction.style.backgroundColor = "#ccc";
+                // Remover borda e padding
+                mealAction.style.borderRadius = "50%";
+                mealAction.style.padding = "";
+                // Remover do localStorage
+                localStorage.removeItem('mealChecked');
+            }
+        }
+
+        // Adicionar evento de clique a todos os elementos .meal-action
+        document.querySelectorAll(".meal-action").forEach(function (element) {
+            element.addEventListener("click", alternarIconeEBackground);
+        });
+
+        // Verificar se há uma refeição marcada no localStorage ao carregar a página
+        window.onload = function () {
+            const mealChecked = localStorage.getItem('mealChecked');
+            if (mealChecked === 'true') {
+                const checkedMeal = document.querySelector('.meal-action i.bx-plus');
+                if (checkedMeal) {
+                    alternarIconeEBackground({ currentTarget: checkedMeal.parentNode });
+                }
+            }
+
+            const mealCheckedAlmoco = localStorage.getItem('mealCheckedAlmoco');
+            if (mealCheckedAlmoco === 'true') {
+                const checkedMealAlmoco = document.querySelector('.meal-action-almoco i.bx-plus');
+                if (checkedMealAlmoco) {
+                    alternarIconeEBackground({ currentTarget: checkedMealAlmoco.parentNode });
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

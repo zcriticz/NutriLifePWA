@@ -1,0 +1,16 @@
+:root {
+    --green: #048c4c;
+    --white: #fff;
+    --gray: #999999;
+  
+    --green-secundary: #00f180;
+    --dark-green: #04733f;
+  
+    --white-secundary: #f7f7f7f7;
+    --white-tertiary: #ccc;
+  
+    --gray-secundary: #555;
+    --gray-tertiary: #666;
+  
+    --font-family: "Inter", sans-serif;
+  }

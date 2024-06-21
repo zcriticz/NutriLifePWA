@@ -1,0 +1,30 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "NutriLife",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "NutriLife",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "assets/images/logo-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "assets/images/maskable-icon.png",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "description": "O aplicativo NutriLife é uma ferramenta inovadora projetada para capacitar os usuários a adotarem hábitos alimentares mais saudáveis, oferecendo orientações nutricionais personalizadas e acompanhamento detalhado de suas refeições diárias. Com uma abordagem centrada no usuário, o NutriLife visa fornecer suporte prático e informativo para indivíduos que desejam melhorar sua saúde e bem-estar por meio de escolhas alimentares mais conscientes.",
+  "lang": "pt"
+}

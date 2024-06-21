@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.space-bottom {
+  padding-bottom: 100px;
+}
+
+/* Selecione outras classes que deseja afetar */
+.user-greeting,
+.meal-name,
+.meal-goal,
+.footer-menu li {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilos para o cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.search-container .avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.user-greeting {
+  margin-left: 10px;
+}
+
+.user-greeting #username {
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-info img {
+  border-radius: 8px;
+}
+
+.notifications {
+  font-size: 24px;
+}
+
+/* Estilos para a área do gráfico de calorias */
+.calories-graph {
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Adiciona drop shadow */
+  border-radius: 20px;
+}
+
+.calories-info {
+  margin-bottom: 20px;
+}
+
+.graph {
+  height: 50px;
+  /* Altura do gráfico */
+  /* Outros estilos para o gráfico */
+}
+
+.consumed,
+.burned,
+.remaining {
+  margin-bottom: 10px;
+}
+
+.registro-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para a área de registro de alimentos */
+.meal-registration img {
+  margin-right: 10px;
+  width: 65px;
+}
+
+.meal-section1 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Adiciona drop shadow */
+}
+
+.meal-info {
+  flex-grow: 1;
+  /* Faz com que a meal-info ocupe o máximo de espaço disponível */
+  margin-top: 10px;
+}
+
+.meal-name {
+  font-weight: bold;
+}
+
+.meal-goal {
+  font-size: 12px;
+  color: #666;
+}
+
+.meal-action {
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.meal-action .bx.bx-plus {
+  border-radius: 50%;
+  background-color: #ccc;
+  padding: 5px;
+}
+
+.meal-action .bx.bx-check {
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.meal-action i {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.meal-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/*Estilo da area de Receitas*/
+/* Estilo para o contêiner do campo de pesquisa */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.search-container .bx.bx-plus {
+  text-decoration: none;
+  color: #00f180;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #00f180;
+}
+
+.search-container input[type="text"] {
+  width: 300px;
+  padding: 10px 30px 10px 10px; /* Adicionando espaço para o ícone */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-container .search-icon {
+  position: relative;
+  left: -25px; /* Posicionamento do ícone dentro do input */
+}
+
+.search-container .search-icon i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: #999;
+}
+
+.search-container a {
+  text-decoration: none;
+  color: #007bff;
+  margin-left: 10px; /* Espaçamento entre o input e o ícone de adição */
+}
+
+.search-container a:hover {
+  text-decoration: underline;
+}
+
+.container-square {
+  position: relative;
+}
+
+.container-square img {
+  display: block;
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.container-square h4 {
+  position: absolute;
+  bottom: 0px; /* Posiciona o h4 no canto inferior */
+  margin: 0; /* Remove margens padrão */
+  color: white; /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
+  padding: 5px 10px; /* Espaçamento interno */
+}
+
+.shop-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  gap: 1rem;
+}
+
+.product-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  /* Para garantir que a borda arredondada seja aplicada corretamente */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Adiciona uma sombra */
+  transition: box-shadow 0.3s ease;
+  /* Adiciona uma transição suave para a sombra */
+  display: flex;
+  flex-direction: column; /* Ajusta a direção dos itens dentro do product-box */
+}
+
+.product-box:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Aumenta a sombra quando o mouse passa sobre */
+}
+
+.product-box img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: auto;
+  object-fit: cover; /* Adiciona o ajuste do tamanho da imagem */
+  flex-grow: 1; /* Faz a imagem ocupar todo o espaço disponível */
+}
+
+.product-itens {
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.product-itens,
+i {
+  display: flex;
+  justify-content: center;
+  /* Alinha os itens horizontalmente */
+}
+
+.product-itens img {
+  width: 20px;
+  height: 20px;
+}
+
+/*Footer*/
+/* Estilo para o rodapé */
+/* Estilos para o rodapé */
+/* Estilos para o rodapé */
+/*Footer*/
+/* Estilo para o rodapé */
+/* Estilos para o rodapé */
+/* Estilos para o rodapé */
+.footer {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  /* Faz o rodapé flutuar na parte inferior da página */
+  width: 100%;
+  /* Faz o rodapé ocupar toda a largura da tela */
+  bottom: 0;
+  /* Fixa o rodapé na parte inferior */
+  z-index: 1000;
+  /* Certifica-se de que o rodapé apareça sobre outros elementos */
+  margin-bottom: -10px;
+  /* Margem negativa para compensar a margem do corpo */
+}
+
+.footer-menu {
+  list-style-type: none;
+  padding: 0px 15px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Centraliza os ícones horizontalmente */
+  align-items: center;
+  /* Centraliza os ícones verticalmente */
+  text-align: center;
+}
+
+.footer-menu li {
+  display: inline-block;
+  padding: 0 10px;
+  /* Espaçamento horizontal entre os ícones */
+}
+
+.footer-menu li a {
+  font-size: 30px;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ÁREA DO MAPA */
+gmp-map {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  padding-bottom: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.neighborhood-discovery {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.neighborhood-discovery a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.neighborhood-discovery button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.neighborhood-discovery .info {
+  color: #555;
+  font-size: 0.9em;
+  margin-top: 0.3em;
+}
+
+.neighborhood-discovery .panel {
+  background: white;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  width: 20em;
+}
+
+.neighborhood-discovery .panel.no-scroll {
+  overflow-y: hidden;
+}
+
+.neighborhood-discovery .photo {
+  background-color: #dadce0;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.neighborhood-discovery .navbar {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.neighborhood-discovery .right {
+  float: right;
+}
+
+.neighborhood-discovery .star-icon {
+  filter: invert(88%) sepia(60%) saturate(2073%) hue-rotate(318deg)
+    brightness(93%) contrast(104%);
+  height: 1.2em;
+  margin-right: -0.3em;
+  margin-top: -0.08em;
+  vertical-align: top;
+  width: 1.2em;
+}
+
+.neighborhood-discovery .star-icon:last-child {
+  margin-right: 0.2em;
+}
+
+.neighborhood-discovery .travel-icon {
+  height: 1.2em;
+  margin-top: -0.08em;
+  vertical-align: top;
+}
+
+.neighborhood-discovery .map {
+  bottom: 0;
+  left: 20em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .neighborhood-discovery .panel {
+    right: 0;
+    top: 50%;
+    width: unset;
+  }
+
+  .neighborhood-discovery .map {
+    bottom: 50%;
+    left: 0;
+  }
+}
+
+/* --------------------------- PLACES PANEL --------------------------- */
+
+.neighborhood-discovery .places-panel {
+  box-shadow: 0 0 10px rgb(60 64 67 / 28%);
+  z-index: 1;
+}
+
+.neighborhood-discovery .places-panel header {
+  padding: 0.5em;
+}
+
+.neighborhood-discovery .search-input input {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  box-sizing: border-box;
+  font-size: 1em;
+  height: 2.2em;
+  padding: 0 2.5em 0 1em;
+  width: 100%;
+}
+
+.neighborhood-discovery .search-input button {
+  position: absolute;
+  right: 0.8em;
+  top: 0.8em;
+}
+
+.neighborhood-discovery .show-more-button {
+  bottom: 0.5em;
+  display: none;
+  left: 28%;
+  line-height: 1.5em;
+  padding: 0.6em;
+  position: relative;
+  width: 44%;
+}
+
+.neighborhood-discovery .show-more-button.sticky {
+  background: white;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 10px rgb(60 64 67 / 28%);
+  position: sticky;
+  z-index: 2;
+}
+
+.neighborhood-discovery .show-more-button:disabled {
+  opacity: 0.5;
+}
+
+.neighborhood-discovery .place-results-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.neighborhood-discovery .place-result {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  padding: 0.8em;
+}
+
+.neighborhood-discovery .place-result .text {
+  flex-grow: 1;
+}
+
+.neighborhood-discovery .place-result .name {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+}
+
+.neighborhood-discovery .place-result .photo {
+  flex: 0 0 4em;
+  height: 4em;
+  margin-left: 0.8em;
+}
+
+/* -------------------------- DETAILS PANEL --------------------------- */
+
+.neighborhood-discovery .details-panel {
+  display: none;
+  z-index: 20;
+}
+
+.neighborhood-discovery .details-panel .back-button {
+  color: #4285f4;
+  padding: 0.9em;
+}
+
+.neighborhood-discovery .details-panel .back-button .icon {
+  /* Match link color #4285f4 */
+  filter: invert(47%) sepia(71%) saturate(2372%) hue-rotate(200deg)
+    brightness(97%) contrast(98%);
+  height: 1.2em;
+  width: 1.2em;
+  vertical-align: bottom;
+}
+
+.neighborhood-discovery .details-panel header {
+  padding: 0.9em;
+}
+
+.neighborhood-discovery .details-panel h2 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.neighborhood-discovery .details-panel .section {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.9em;
+}
+
+.neighborhood-discovery .details-panel .contact {
+  align-items: center;
+  display: flex;
+  font-size: 0.9em;
+  margin: 0.8em 0;
+}
+
+.neighborhood-discovery .details-panel .contact .icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.neighborhood-discovery .details-panel .contact .text {
+  margin-left: 1em;
+}
+
+.neighborhood-discovery .details-panel .contact .weekday {
+  display: inline-block;
+  width: 5em;
+}
+
+.neighborhood-discovery .details-panel .photos {
+  text-align: center;
+}
+
+.neighborhood-discovery .details-panel .photo {
+  display: inline-block;
+  height: 5.5em;
+  width: 5.5em;
+}
+
+.neighborhood-discovery .details-panel .review {
+  margin-top: 1.2em;
+}
+
+.neighborhood-discovery .details-panel .review .reviewer-avatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  height: 1.8em;
+  margin-right: 0.8em;
+  width: 1.8em;
+}
+
+.neighborhood-discovery .details-panel .review .reviewer-name {
+  color: #202124;
+  font-weight: 500;
+  line-height: 1.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.neighborhood-discovery .details-panel .review .rating {
+  margin: 0.5em 0;
+}
+
+.neighborhood-discovery .details-panel .attribution {
+  color: #777;
+  margin: 0;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+/* --------------------------- PHOTO MODAL ---------------------------- */
+
+.neighborhood-discovery .photo-modal {
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.neighborhood-discovery .photo-modal > img {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.neighborhood-discovery .photo-modal > div {
+  border-radius: 0.4em;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 1em;
+  padding: 0.9em;
+  position: absolute;
+}
+
+.neighborhood-discovery .photo-modal .back-button .icon {
+  filter: brightness(0) invert(1);
+  margin: 0.4em 0.6em 0 0;
+}
+
+.neighborhood-discovery .photo-modal .photo-text {
+  float: right;
+}
+
+.neighborhood-discovery .photo-modal .photo-attrs {
+  font-size: 0.8em;
+  margin-top: 0.3em;
+}

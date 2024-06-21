@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="url-do-servidor">
+    <title>NutriLife - Registrar Alimentos</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        header .inc-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .registro-alimento {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f0f0;
+            border: 2px dashed #ccc;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .registro-alimento img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .registro-alimento button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #048C4C;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .registro-alimento .icon-trash,
+        .registro-alimento .icon-edit {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .meal-info {
+            margin-top: 20px;
+            padding: 15px 5px 15px 5px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .meal-info label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .meal-info input {
+            width: 100%;
+            padding: 20px;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            pointer-events: none; /* Remova esta linha para habilitar a edição dos inputs */
+        }
+
+        .meal-info input.editavel {
+            pointer-events: auto; /* Adicione esta linha para habilitar a edição dos inputs */
+        }
+
+        .meal-info button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 15px 20px;
+            background-color: #048C4C;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .meal-info .icon-edit {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #048C4C;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="inc-container">
+            <a href="HomePage.html" class="seta-esquerda">
+                <i class='bx bxs-chevron-left' style="color: #000; font-size: 28px; "></i>
+            </a>
+            <h3>Café da manhã</h3>
+            <i class='bx bx-dots-vertical' style="color: #000; font-size: 25px;"></i>
+        </div>
+    </header>
+
+    <div class="registro-alimento" id="registroAlimento">
+        <img id="imagemSelecionada" src="" alt="">
+        <input type="file" accept="image/*" id="inputImagem" style="display: none;">
+        <button id="btnSelecionarImagem" onclick="selecionarImagem()">Selecionar Imagem</button>
+        <i class='bx bx-trash icon-trash' onclick="apagarImagem()"></i>
+    </div>
+
+    <div class="meal-info">
+        <label for="nome-refeicao">Nome da Refeição</label>
+        <input type="text" id="nome-refeicao" class="editavel" placeholder="Ex: Café da Manhã" required>
+
+        <label for="quantidade-carboidratos">Quantidade de Carboidratos (g)</label>
+        <input type="number" id="quantidade-carboidratos" class="editavel" placeholder="Ex: 50" required>
+
+        <label for="quantidade-proteinas">Quantidade de Proteínas (g)</label>
+        <input type="number" id="quantidade-proteinas" class="editavel" placeholder="Ex: 20" required>
+
+        <label for="quantidade-gordura">Quantidade de Gordura (g)</label>
+        <input type="number" id="quantidade-gordura" class="editavel" placeholder="Ex: 10" required>
+    
+        <div style="display: flex; justify-content: center;">
+        <button class="conf-register" onclick="registrarDados()">Registrar</button>
+    </div>
+        <i class='bx bx-edit icon-edit' onclick="habilitarEdicao()"></i>
+    </div>
+
+   <!-- Link JS-->
+   <script>
+    let imagemSelecionada = document.getElementById("imagemSelecionada");
+        let inputImagem = document.getElementById("inputImagem");
+        let registroAlimento = document.getElementById("registroAlimento");
+        let btnSelecionarImagem = document.getElementById("btnSelecionarImagem");
+
+        // Verificar se há uma imagem armazenada no localStorage ao carregar a página
+        window.onload = function() {
+            const imagemArmazenada = localStorage.getItem("imagemCapturada");
+            if (imagemArmazenada) {
+                imagemSelecionada.src = imagemArmazenada;
+                registroAlimento.classList.add("com-imagem");
+                btnSelecionarImagem.style.display = "none";
+            }
+
+            const nomeRefeicao = localStorage.getItem("nomeRefeicao");
+            if (nomeRefeicao) {
+                document.getElementById("nome-refeicao").value = nomeRefeicao;
+            }
+
+            const quantidadeCarboidratos = localStorage.getItem("quantidadeCarboidratos");
+            if (quantidadeCarboidratos) {
+                document.getElementById("quantidade-carboidratos").value = quantidadeCarboidratos;
+            }
+
+            const quantidadeProteinas = localStorage.getItem("quantidadeProteinas");
+            if (quantidadeProteinas) {
+                document.getElementById("quantidade-proteinas").value = quantidadeProteinas;
+            }
+
+            const quantidadeGordura = localStorage.getItem("quantidadeGordura");
+            if (quantidadeGordura) {
+                document.getElementById("quantidade-gordura").value = quantidadeGordura;
+            }
+        };
+
+        function capturarImagem() {
+            // Implemente a captura de imagem aqui
+        }
+
+        function selecionarImagem() {
+            inputImagem.click();
+        }
+
+        inputImagem.addEventListener('change', function() {
+            const file = inputImagem.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagemSelecionada.src = e.target.result;
+                    registroAlimento.classList.add("com-imagem");
+                    localStorage.setItem("imagemCapturada", e.target.result);
+                    btnSelecionarImagem.style.display = "none";
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function apagarImagem() {
+            imagemSelecionada.src = "";
+            registroAlimento.classList.remove("com-imagem");
+            localStorage.removeItem("imagemCapturada");
+            btnSelecionarImagem.style.display = "block";
+        }
+
+        function habilitarEdicao() {
+            // Habilitar a edição dos inputs
+            document.querySelectorAll('.editavel').forEach(input => {
+                input.disabled = false;
+            });
+
+            // Direcionar o foco para o primeiro input
+            document.getElementById("nome-refeicao").focus();
+        }
+
+        function desabilitarEdicao() {
+            // Desabilitar a edição dos inputs
+            document.querySelectorAll('.editavel').forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        function registrarDados() {
+            // Desabilitar a edição dos inputs
+            desabilitarEdicao();
+
+            // Obter os valores dos inputs
+            const nomeRefeicao = document.getElementById("nome-refeicao").value;
+            const quantidadeCarboidratos = document.getElementById("quantidade-carboidratos").value;
+            const quantidadeProteinas = document.getElementById("quantidade-proteinas").value;
+            const quantidadeGordura = document.getElementById("quantidade-gordura").value;
+
+            // Salvar os dados no localStorage
+            localStorage.setItem("nomeRefeicao", nomeRefeicao);
+            localStorage.setItem("quantidadeCarboidratos", quantidadeCarboidratos);
+            localStorage.setItem("quantidadeProteinas", quantidadeProteinas);
+            localStorage.setItem("quantidadeGordura", quantidadeGordura);
+
+            // Exibir mensagem de sucesso
+            alert("Dados registrados com sucesso!");
+
+        }
+   </script>
+
+   
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="preconnect" href="url-do-servidor" />
+    <title>NutriLife</title>
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Pesquise por receitas aqui"
+      />
+      <a href="#" id="addLink"><i class="bx bx-plus"></i></a>
+    </div>
+
+    <section id="search-section" class="searchable-section" data-search="todos">
+      <div class="container-square">
+        <a href="receita-almoco-one.html">
+          <img src="assets/images/receita-new.jpg" alt="" />
+        </a>
+        <h4>Frango com Cajus e Brócolis</h4>
+      </div>
+    </section>
+
+    <div class="shop-content-container">
+      <section
+        class="shop container searchable-section"
+        style="margin-bottom: 0px; padding-bottom: 0px; padding-top: 0px"
+      >
+        <h4>CAFÉ DA MANHÃ</h4>
+        <div class="shop-content">
+          <!-- Box 1 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-granola01.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Granola com amêndoas</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-toasts.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Toasts</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-waffles-saudavel.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Waffes saudável</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/vanilla-almond-granola.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Brunch</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="shop-content-container">
+      <section
+        class="shop container searchable-section"
+        style="margin-bottom: 0px; padding-bottom: 0px; padding-top: 0px"
+      >
+        <h4>ALMOÇO</h4>
+        <div class="shop-content">
+          <!-- Box 1 -->
+          <div class="product-box">
+            <a href="receita-almoco-one.html" class="receita">
+              <img
+                src="assets/images/receita-frango-brocolis.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Frango com Brócolis</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-salada-de-grão.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Salada de grão</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-prato-salada.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Prato de salada</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-quinoa.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Quinoa com abacate</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="shop-content-container">
+      <section
+        class="shop container searchable-section"
+        style="margin-bottom: 0px; padding-bottom: 0px; padding-top: 0px"
+      >
+        <h4>LANCHE</h4>
+        <div class="shop-content">
+          <!-- Box 1 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-lanche-chips-de-batata-doce-no-forno.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Chips de batata doce</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-lanche-cooking-aveia.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Cookies de aveia</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/lanche-hamburguer-lentilha.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Hamburguer de lentilha</h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="shop-content-container" style="padding-bottom: 100px">
+      <section
+        class="shop container searchable-section"
+        style="margin-bottom: 0px; padding-bottom: 0px; padding-top: 0px"
+      >
+        <h4>JANTA</h4>
+        <div class="shop-content">
+          <!-- Box 1 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-guisado-de-grão-de-bico-com-cogumelos.jpg"
+                alt=""
+                class="product-img"
+                id="product-img-1"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">
+                  Guisado de grão de bico com cogumelo
+                </h2>
+              </a>
+              <!-- <i class='bx bx-heart' id="favorite-icon" style="font-size: 20px; color: #000;"></i>-->
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="product-box">
+            <a href="" class="receita">
+              <img
+                src="assets/images/receita-mingau-de-aveia.jpg"
+                alt=""
+                class="product-img"
+              />
+            </a>
+            <div
+              class="product-itens"
+              style="display: flex; justify-content: space-between"
+            >
+              <a href="" style="text-decoration: none; color: #000">
+                <h2 class="product-title">Mingau de aveia</h2>
+              </a>
+              <i
+                class="bx bx-heart"
+                id="seta-esquerda"
+                style="font-size: 20px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer" style="margin: 0px">
+      <ul class="footer-menu">
+        <li>
+          <a href="HomePage.html" id="homeLink"><i class="bx bx-home"></i></a>
+        </li>
+        <li>
+          <a href="area-receita.html"><i class="bx bx-dish"></i></a>
+        </li>
+        <!-- Ícone de chef de cozinha -->
+        <li>
+          <a href="maps.html"
+            ><i
+              class="bx bx-map"
+              style="
+                color: #fff;
+                background-color: #00f180;
+                border-radius: 50%;
+                padding: 10px;
+              "
+            ></i
+          ></a>
+        </li>
+        <!-- Ícone de localização -->
+        <li>
+          <a href="#"><i class="bx bx-chart"></i></a>
+        </li>
+        <!-- Ícone de gráfico -->
+        <li>
+          <a href="#" id="userLink"><i class="bx bx-user"></i></a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- Link JS-->
+    <script src="script.js"></script>
+    <script src="Favorite.js"></script>
+  </body>
+</html>

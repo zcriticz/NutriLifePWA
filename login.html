@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Título -->
+    <title>NutriLife</title>
+    <!-- FavIcon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/variables.css" />
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        overflow-y: hidden;
+      }
+
+      .container {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-area__container {
+        max-width: 90%;
+        padding: 50px;
+        background-color: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #logo {
+        width: 50px;
+        margin-bottom: 30px;
+      }
+
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      input {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border: 0px;
+        border-bottom: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      #forgot-password {
+        margin-top: 10px;
+        color: var(--gray-secundary);
+      }
+
+      #login-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        margin-top: 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: var(--green);
+        color: var(--white);
+      }
+
+      #login-btn:hover {
+        background-color: var(--dark-green);
+      }
+
+      #login-a {
+        text-decoration: none;
+        color: var(--white);
+      }
+
+      #signup {
+        margin-top: 30px;
+        color: var(--gray);
+      }
+
+      .social-icons {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .social-icons img {
+        width: 30px;
+        margin: 0 15px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .login-area__container {
+          max-width: 70%;
+        }
+
+        #logo {
+          width: 60px;
+        }
+
+        .login-area__container,
+        input,
+        #btn {
+          width: calc(100% - 20px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="login-area__container">
+        <img id="logo" src="assets/images/logo.png" alt="Logo Nutrilife" />
+        <h4>Entrar em sua conta Nutrilife</h4>
+
+        <form action="#" class="form">
+          <input type="email" placeholder="E-mail" required />
+          <input type="password" placeholder="Senha" required />
+          <a href="#" id="forgot-password">Esqueceu a senha?</a>
+          <button id="login-btn">Entrar</button>
+          <p id="signup">Não é cadastrado? <a href="#">Cadastrar-se</a></p>
+        </form>
+
+        <div class="social-icons">
+          <img src="assets/images/google-icon.png" alt="Google" />
+          <img src="assets/images/apple-icon.png" alt="Apple" />
+          <img src="assets/images/facebook-icon.png" alt="Facebook" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Seleciona o botão de login
+      const loginButton = document.getElementById("login-btn");
+
+      // Adiciona um ouvinte de evento para o clique no botão de login
+      loginButton.addEventListener("click", function (event) {
+        // Previne o comportamento padrão do formulário de ser enviado
+        event.preventDefault();
+
+        // Seleciona os campos de e-mail e senha
+        const emailInput = document.querySelector('input[type="email"]');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        // Verifica se ambos os campos estão preenchidos
+        if (
+          emailInput.value.trim() === "" ||
+          passwordInput.value.trim() === ""
+        ) {
+          // Se algum campo estiver vazio, exibe uma mensagem de erro
+          alert("Por favor, preencha todos os campos.");
+        } else {
+          // Se ambos os campos estiverem preenchidos, redireciona para a página de HomePage
+          window.location.href = "HomePage.html";
+        }
+      });
+    </script>
+  </body>
+</html>

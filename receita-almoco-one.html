@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="url-do-servidor">
+    <title>Receita - Frango com brócolis</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-container {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            /* Impede a imagem de sair para fora do container */
+        }
+
+        .seta-esquerda {
+            position: absolute;
+            top: 10px; /* Ajusta a posição vertical */
+            left: 10px; /* Ajusta a posição horizontal */
+            color: white;
+            text-decoration: none;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para legibilidade do texto */
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .overlay h4 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .overlay i {
+            padding-right: 25px;
+            font-size: 30px;
+        }
+
+        .conteudo {
+            padding: 20px;
+        }
+
+        .ingredientes {
+            display: flex;
+            overflow-x: auto;
+            /* Permite rolar horizontalmente */
+            gap: 10px;
+            /* Espaçamento entre os ingredientes */
+            -ms-overflow-style: none;
+            /* IE e Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .ingrediente {
+            text-align: center;
+            flex: 0 0 auto;
+            /* Evita que os ingredientes sejam redimensionados */
+            width: calc(35% - 10px);
+            /* Largura de 50% com espaço entre os ingredientes */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: 10px;
+            margin-left: 0px;
+        }
+
+        .ingrediente img {
+            width: 60%;
+            /* Ajusta a largura da imagem para preencher o contêiner */
+            max-width: 100px;
+            /* Define uma largura máxima para as imagens */
+            height: auto;
+            /* Mantém a proporção da imagem */
+        }
+
+
+        /* Estilizando as bolinhas das listas */
+        .passo-a-passo {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .passo-a-passo ul {
+            list-style-type: none;
+            /* Removendo as bolinhas */
+            padding-left: 0;
+            /* Removendo o recuo padrão */
+        }
+
+        .passo-a-passo ul li {
+            position: relative;
+            padding-left: 40px;
+            /* Espaço para a bolinha */
+            margin-bottom: 10px;
+            /* Espaço entre os itens da lista */
+        }
+
+        .passo-a-passo ul li::before {
+            content: attr(data-number);
+            /* Adiciona o número do item */
+            display: inline-block;
+            width: 30px;
+            /* Tamanho do quadrado */
+            height: 30px;
+            /* Tamanho do quadrado */
+            background-color: #048C4C;
+            /* Cor de fundo verde */
+            color: white;
+            /* Cor do texto branco */
+            text-align: center;
+            /* Alinhamento do texto */
+            font-size: 15px;
+            /* Tamanho da fonte */
+            line-height: 30px;
+            /* Altura da linha para centralizar o texto */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .feedback .feedback-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feedback .feedback-title span {
+            color: #00F180;
+        }
+
+        .feedback-item {
+            display: flex;
+            background-color: #F9F9BA;
+            border-radius: 20px;
+            margin-bottom: 5px;
+            padding: 15px;
+        }
+
+        .feedback-item img {
+            width: 43px;
+            height: 43px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .feedback-item p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <a href="area-receita.html" class="seta-esquerda">
+            <i class='bx bxs-chevron-left' style="font-size: 28px;"></i>
+        </a>
+        <img src="assets/images/receita-new.jpg" alt="">
+        <div class="overlay">
+            <h4>Frango com Cajus e Brócolis</h4>
+            <i class='bx bx-heart'></i>
+        </div>
+    </div>
+
+    <section class="conteudo">
+        <h4>INGREDIENTES</h4>
+        <div class="ingredientes">
+            <div class="ingrediente">
+                <img src="assets/images/peito-de-frango.png" alt="">
+                <p>Frango</p>
+            </div>
+            <div class="ingrediente">
+                <img src="assets/images/brocolis.png" alt="">
+                <p>Brócolis</p>
+            </div>
+
+            <div class="ingrediente">
+                <img src="assets/images/castanha.png" alt="">
+                <p>Castanha</p>
+            </div>
+
+            <div class="ingrediente">
+                <img src="assets/images/alho.png" alt="">
+                <p>Alho</p>
+            </div>
+
+            <div class="ingrediente">
+                <img src="assets/images/molho-de-soja.png" alt="">
+                <p>Molho de soja</p>
+            </div>
+
+        </div>
+
+        <div class="passo-a-passo">
+            <h4>PASSO A PASSO</h4>
+            <ul>
+                <li data-number="1">Aqueça uma frigideira média em fogo médio-alto. Adicione o frango e o molho e
+                    cozinhe
+                    até que o frango não fique mais rosado</li><br>
+                <li data-number="2">Adicione os vegetais e o caldo de galinha e continue cozinhando até que os vegetais
+                    estejam macios.</li> <br>
+                <li data-number="3">Adicione uma pasta de amido de milho para ajudar a engrossar o molho. Sirva o prato
+                    com
+                    arroz e decore com cebolinha</li>
+            </ul>
+        </div>
+
+        <div class="feedback">
+            <div class="feedback-title">
+                <h4>FEEDBACK</h4>
+                <span>Ver tudo</span>
+            </div>
+            <div class="feedback-item">
+                <img src="assets/images/avatar (2).png" alt="">
+                <div>
+                    <p><strong>Ficou perfeito</strong><br>Ficou pronto em menos de 30 minutos e o sabor
+                        era
+                        incrível. A cobertura de frango com alho sobre o refogado é possivelmente a
+                        melhor
+                        que já comemos. Todos os sabores combinaram perfeitamente e adoramos
+                        especialmente
+                        os cajus crocantes escondidos por toda parte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link JS-->
+    <script src="assets/style.css"></script>
+
+</body>
+
+</html>
